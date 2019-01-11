@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajout du Emploi{% endblock %}
+
+
+
+    {% block header %}
+        <h1>Formulaire d'ajout</h1>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active"><i class="fa fa-file"></i> Blank Page</li>
+            <li class="active"><i class="fa fa-file"></i> Formulaire d'ajout</li>
+        </ol>
+    {% endblock %}
+ {% block body %}
+     {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+     {{ form_widget(form) }}
+     {{ form_end(form) }}
+ {% endblock %}

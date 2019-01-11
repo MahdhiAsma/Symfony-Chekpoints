@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne:Update{% endblock %}
+
+ {% block header %}
+                    <h1>Mise a jour des informations personelles</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <li class="active"><i class="fa fa-file"></i> Blank Page</li>
+                        <li class="active"><i class="fa fa-file"></i> Update</li>
+                    </ol>
+{% endblock %}
+
+ {% block body %}
+     {{ form(form) }}
+ {% endblock %}

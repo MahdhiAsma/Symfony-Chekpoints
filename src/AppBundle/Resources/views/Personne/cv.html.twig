@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}cv Page{% endblock %}
+
+    {% block body %}
+        <div class="media user">
+            <a class="media-avatar pull-left" href="#">
+                <img class="img" src="{{asset("images/"~personne.media.photo)}}" style=" border-radius: 50%;
+    max-width: 80px;">
+            </a>
+            <div class="media-body">
+                <h3 class="media-title">
+
+                </h3>
+                <p>
+                    <small class="muted ">{{ personne.nom }} {{ personne.prenom }}</small>
+                    <br>
+                    <small class="muted">{{ personne.age }} </small></p>
+                <small class="muted"> {% for  emploi in personne.emploi  %}
+                            {{ emploi.state }}
+                        {% endfor %} </small></p>
+                <small class="muted">{{ personne.addresse.description }} </small></p>
+                <div class="media-option btn-group shaded-icon">
+                    <button class="fa fa-small">
+                        <i class="fa fa-envelope"></i>
+                    </button>
+                    <button class="fa fa-small">
+                        <i class="fa fa-share"></i>
+                    </button>
+                </div>
+
+            </div>
+            <br>
+
+        </div>
+    {% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Personne List{% endblock %}
+                {% block header %}
+                    <h1>Gestion des personnes</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <li class="active"><i class="fa fa-file"></i> Blank Page</li>
+                        <li class="active"><i class="fa fa-file"></i> Gestion des personnes</li>
+                    </ol>
+                {% endblock %}
+{% block body %}
+ {{ dump(personnes)}}
+    <div class="containe)r" >
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Age</th>
+                    <th>emploi</th>
+                    <th>Addresse</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for personne in personnes %}
+                <tr>
+
+                    <td>{{ personne.nom }} </td>
+                    <td>{{ personne.prenom }}</td>
+                    <td>{{ personne.age }}</td>
+                    <td>{% for  emploi in personne.emploi  %}
+                            {{ emploi.state }}
+                        {% endfor %}</td>
+                    <td>{{ personne.addresse.description }}</td>
+
+                  <td> <button class="btn btn-success" >
+                          <a class="fa fa-share" href="{{ path('cvpage',{id:personne.id})}}"> Find Profile
+                          </a>
+                      </button>
+                      <button class="btn btn-danger" >
+
+                          <a class="fa fa-share" href="{{ path('RemovePersonne',{personne:personne.id})}}"> Remove
+                          </a>
+                      </button>
+                    <button class="btn btn-dark">
+                        <a class="fa fa-share" href="{{ path('Updateform',{personne:personne.id})}}"> Update Profile
+                        </a>
+                    </button>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
